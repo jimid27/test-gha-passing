@@ -1,0 +1,18 @@
+name: test-action
+description: "Test action"
+outputs:
+  foo: 
+    value: ${{ steps.output_step.outputs.this_is_output }}
+    description: > 
+      "Output description"
+runs:
+  using: composite
+  steps:
+    - id: step_1
+      name: step 1
+      run: echo "Hello, world!"
+      shell: bash
+    - id: output_step
+      name: output step
+      run: echo "this_is_output" >> $GITHUB_OUTPUT
+      shell: bash
