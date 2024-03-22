@@ -2,7 +2,7 @@ name: test-action
 description: "Test action"
 outputs:
   foo: 
-    value: ${{ steps.output_step.outputs.this_is_output }}
+    value: ${{ steps.output-step.outputs.this-is-output }}
     description: > 
       "Output description"
 runs:
@@ -12,7 +12,7 @@ runs:
       name: step 1
       run: echo "Hello, world!"
       shell: bash
-    - id: output_step
+    - id: output-step
       name: output step
-      run: echo "this_is_output=this_is_output" >> $GITHUB_OUTPUT
+      run: echo "this-is-output=$(echo this_is_output)" >> $GITHUB_OUTPUT
       shell: bash
