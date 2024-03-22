@@ -14,5 +14,5 @@ runs:
       shell: bash
     - id: output-step
       name: output step
-      run: echo "this-is-output=$(echo this_is_output)" >> $GITHUB_OUTPUT
+      run: echo "this-is-output=$(echo '')" >> $GITHUB_OUTPUT
       shell: bash
