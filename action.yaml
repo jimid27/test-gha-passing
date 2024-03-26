@@ -10,7 +10,7 @@ runs:
   steps:
     - id: step_1
       name: step 1
-      run: echo "Hello, world!"
+      run: echo "Your repo is $(echo $GITHUB_REPOSITORY | tr '[:upper:]' '[:lower:]')"
       shell: bash
     - id: output-step
       name: output step
